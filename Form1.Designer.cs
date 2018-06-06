@@ -75,6 +75,17 @@
             this.F4lblFolderPath = new System.Windows.Forms.Label();
             this.F4lblListPath = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.F5btnMoveNoneMatches = new System.Windows.Forms.Button();
+            this.F5btnNoMatchesFolderPath = new System.Windows.Forms.Button();
+            this.F5btnFolderPath = new System.Windows.Forms.Button();
+            this.F5btnListPath = new System.Windows.Forms.Button();
+            this.F5tbNoMatchesFolderPath = new System.Windows.Forms.TextBox();
+            this.F5tbFolderPath = new System.Windows.Forms.TextBox();
+            this.F5tbListPath = new System.Windows.Forms.TextBox();
+            this.F5lblNoMatchesResultMessage = new System.Windows.Forms.Label();
+            this.F5lblNoMatchesFolderPath = new System.Windows.Forms.Label();
+            this.F5lblFolderPath = new System.Windows.Forms.Label();
+            this.F5lblListPath = new System.Windows.Forms.Label();
             this.F1ofdFileXMLPath = new System.Windows.Forms.OpenFileDialog();
             this.F1ofdListPath = new System.Windows.Forms.SaveFileDialog();
             this.F2ofdListFilePath = new System.Windows.Forms.OpenFileDialog();
@@ -87,12 +98,16 @@
             this.F4ofdListPath = new System.Windows.Forms.OpenFileDialog();
             this.F4ofdSearchFolderPath = new System.Windows.Forms.FolderBrowserDialog();
             this.F4ofdMatchesFolderPath = new System.Windows.Forms.FolderBrowserDialog();
+            this.F5ofdListPath = new System.Windows.Forms.OpenFileDialog();
+            this.F5ofdSearchFolderPath = new System.Windows.Forms.FolderBrowserDialog();
+            this.F5ofdNoMatchesFolderPath = new System.Windows.Forms.FolderBrowserDialog();
             F1lblFileXML = new System.Windows.Forms.Label();
             this.F1TabControl.SuspendLayout();
             this.F1Tab.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // F1lblFileXML
@@ -478,7 +493,7 @@
             // 
             this.F4btnMatchesFolderPath.Location = new System.Drawing.Point(595, 146);
             this.F4btnMatchesFolderPath.Name = "F4btnMatchesFolderPath";
-            this.F4btnMatchesFolderPath.Size = new System.Drawing.Size(75, 29);
+            this.F4btnMatchesFolderPath.Size = new System.Drawing.Size(75, 30);
             this.F4btnMatchesFolderPath.TabIndex = 9;
             this.F4btnMatchesFolderPath.Text = "Browse";
             this.F4btnMatchesFolderPath.UseVisualStyleBackColor = true;
@@ -488,7 +503,7 @@
             // 
             this.F4btnFolderPath.Location = new System.Drawing.Point(595, 103);
             this.F4btnFolderPath.Name = "F4btnFolderPath";
-            this.F4btnFolderPath.Size = new System.Drawing.Size(75, 26);
+            this.F4btnFolderPath.Size = new System.Drawing.Size(75, 30);
             this.F4btnFolderPath.TabIndex = 8;
             this.F4btnFolderPath.Text = "Browse";
             this.F4btnFolderPath.UseVisualStyleBackColor = true;
@@ -498,7 +513,7 @@
             // 
             this.F4lbtnListPath.Location = new System.Drawing.Point(595, 54);
             this.F4lbtnListPath.Name = "F4lbtnListPath";
-            this.F4lbtnListPath.Size = new System.Drawing.Size(75, 26);
+            this.F4lbtnListPath.Size = new System.Drawing.Size(75, 30);
             this.F4lbtnListPath.TabIndex = 7;
             this.F4lbtnListPath.Text = "Browse";
             this.F4lbtnListPath.UseVisualStyleBackColor = true;
@@ -541,9 +556,9 @@
             this.F4lblMatchesFolderPath.AutoSize = true;
             this.F4lblMatchesFolderPath.Location = new System.Drawing.Point(35, 152);
             this.F4lblMatchesFolderPath.Name = "F4lblMatchesFolderPath";
-            this.F4lblMatchesFolderPath.Size = new System.Drawing.Size(182, 20);
+            this.F4lblMatchesFolderPath.Size = new System.Drawing.Size(173, 20);
             this.F4lblMatchesFolderPath.TabIndex = 2;
-            this.F4lblMatchesFolderPath.Text = "Escribir coincidencias en";
+            this.F4lblMatchesFolderPath.Text = "Mover coincidencias en";
             // 
             // F4lblFolderPath
             // 
@@ -565,6 +580,17 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.F5btnMoveNoneMatches);
+            this.tabPage5.Controls.Add(this.F5btnNoMatchesFolderPath);
+            this.tabPage5.Controls.Add(this.F5btnFolderPath);
+            this.tabPage5.Controls.Add(this.F5btnListPath);
+            this.tabPage5.Controls.Add(this.F5tbNoMatchesFolderPath);
+            this.tabPage5.Controls.Add(this.F5tbFolderPath);
+            this.tabPage5.Controls.Add(this.F5tbListPath);
+            this.tabPage5.Controls.Add(this.F5lblNoMatchesResultMessage);
+            this.tabPage5.Controls.Add(this.F5lblNoMatchesFolderPath);
+            this.tabPage5.Controls.Add(this.F5lblFolderPath);
+            this.tabPage5.Controls.Add(this.F5lblListPath);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -573,6 +599,105 @@
             this.tabPage5.Text = "Mover archivos que NO coinciden";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // F5btnMoveNoneMatches
+            // 
+            this.F5btnMoveNoneMatches.Location = new System.Drawing.Point(232, 224);
+            this.F5btnMoveNoneMatches.Name = "F5btnMoveNoneMatches";
+            this.F5btnMoveNoneMatches.Size = new System.Drawing.Size(227, 44);
+            this.F5btnMoveNoneMatches.TabIndex = 21;
+            this.F5btnMoveNoneMatches.Text = "Mover las no coincidencias";
+            this.F5btnMoveNoneMatches.UseVisualStyleBackColor = true;
+            this.F5btnMoveNoneMatches.Click += new System.EventHandler(this.F5btnNoMatches_Click);
+            // 
+            // F5btnNoMatchesFolderPath
+            // 
+            this.F5btnNoMatchesFolderPath.Location = new System.Drawing.Point(604, 165);
+            this.F5btnNoMatchesFolderPath.Name = "F5btnNoMatchesFolderPath";
+            this.F5btnNoMatchesFolderPath.Size = new System.Drawing.Size(75, 30);
+            this.F5btnNoMatchesFolderPath.TabIndex = 20;
+            this.F5btnNoMatchesFolderPath.Text = "Browse";
+            this.F5btnNoMatchesFolderPath.UseVisualStyleBackColor = true;
+            this.F5btnNoMatchesFolderPath.Click += new System.EventHandler(this.F5btnNoMatchesFolderPath_Click);
+            // 
+            // F5btnFolderPath
+            // 
+            this.F5btnFolderPath.Location = new System.Drawing.Point(604, 122);
+            this.F5btnFolderPath.Name = "F5btnFolderPath";
+            this.F5btnFolderPath.Size = new System.Drawing.Size(75, 30);
+            this.F5btnFolderPath.TabIndex = 19;
+            this.F5btnFolderPath.Text = "Browse";
+            this.F5btnFolderPath.UseVisualStyleBackColor = true;
+            this.F5btnFolderPath.Click += new System.EventHandler(this.F5btnFolderPath_Click);
+            // 
+            // F5btnListPath
+            // 
+            this.F5btnListPath.Location = new System.Drawing.Point(604, 73);
+            this.F5btnListPath.Name = "F5btnListPath";
+            this.F5btnListPath.Size = new System.Drawing.Size(75, 30);
+            this.F5btnListPath.TabIndex = 18;
+            this.F5btnListPath.Text = "Browse";
+            this.F5btnListPath.UseVisualStyleBackColor = true;
+            this.F5btnListPath.Click += new System.EventHandler(this.F5btnListPath_Click);
+            // 
+            // F5tbNoMatchesFolderPath
+            // 
+            this.F5tbNoMatchesFolderPath.Location = new System.Drawing.Point(232, 168);
+            this.F5tbNoMatchesFolderPath.Name = "F5tbNoMatchesFolderPath";
+            this.F5tbNoMatchesFolderPath.ReadOnly = true;
+            this.F5tbNoMatchesFolderPath.Size = new System.Drawing.Size(355, 26);
+            this.F5tbNoMatchesFolderPath.TabIndex = 17;
+            // 
+            // F5tbFolderPath
+            // 
+            this.F5tbFolderPath.Location = new System.Drawing.Point(232, 122);
+            this.F5tbFolderPath.Name = "F5tbFolderPath";
+            this.F5tbFolderPath.ReadOnly = true;
+            this.F5tbFolderPath.Size = new System.Drawing.Size(355, 26);
+            this.F5tbFolderPath.TabIndex = 16;
+            // 
+            // F5tbListPath
+            // 
+            this.F5tbListPath.Location = new System.Drawing.Point(232, 73);
+            this.F5tbListPath.Name = "F5tbListPath";
+            this.F5tbListPath.ReadOnly = true;
+            this.F5tbListPath.Size = new System.Drawing.Size(355, 26);
+            this.F5tbListPath.TabIndex = 15;
+            // 
+            // F5lblNoMatchesResultMessage
+            // 
+            this.F5lblNoMatchesResultMessage.AutoSize = true;
+            this.F5lblNoMatchesResultMessage.Location = new System.Drawing.Point(474, 236);
+            this.F5lblNoMatchesResultMessage.Name = "F5lblNoMatchesResultMessage";
+            this.F5lblNoMatchesResultMessage.Size = new System.Drawing.Size(0, 20);
+            this.F5lblNoMatchesResultMessage.TabIndex = 14;
+            // 
+            // F5lblNoMatchesFolderPath
+            // 
+            this.F5lblNoMatchesFolderPath.AutoSize = true;
+            this.F5lblNoMatchesFolderPath.Location = new System.Drawing.Point(22, 170);
+            this.F5lblNoMatchesFolderPath.Name = "F5lblNoMatchesFolderPath";
+            this.F5lblNoMatchesFolderPath.Size = new System.Drawing.Size(200, 20);
+            this.F5lblNoMatchesFolderPath.TabIndex = 13;
+            this.F5lblNoMatchesFolderPath.Text = "Mover NO coincidencias en";
+            // 
+            // F5lblFolderPath
+            // 
+            this.F5lblFolderPath.AutoSize = true;
+            this.F5lblFolderPath.Location = new System.Drawing.Point(141, 124);
+            this.F5lblFolderPath.Name = "F5lblFolderPath";
+            this.F5lblFolderPath.Size = new System.Drawing.Size(81, 20);
+            this.F5lblFolderPath.TabIndex = 12;
+            this.F5lblFolderPath.Text = "Buscar en";
+            // 
+            // F5lblListPath
+            // 
+            this.F5lblListPath.AutoSize = true;
+            this.F5lblListPath.Location = new System.Drawing.Point(175, 75);
+            this.F5lblListPath.Name = "F5lblListPath";
+            this.F5lblListPath.Size = new System.Drawing.Size(43, 20);
+            this.F5lblListPath.TabIndex = 11;
+            this.F5lblListPath.Text = "Lista";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -580,7 +705,7 @@
             this.ClientSize = new System.Drawing.Size(1069, 563);
             this.Controls.Add(this.F1TabControl);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "MAME Util";
             this.F1TabControl.ResumeLayout(false);
             this.F1Tab.ResumeLayout(false);
             this.F1Tab.PerformLayout();
@@ -590,6 +715,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -654,6 +781,20 @@
         private System.Windows.Forms.OpenFileDialog F4ofdListPath;
         private System.Windows.Forms.FolderBrowserDialog F4ofdSearchFolderPath;
         private System.Windows.Forms.FolderBrowserDialog F4ofdMatchesFolderPath;
+        private System.Windows.Forms.Button F5btnMoveNoneMatches;
+        private System.Windows.Forms.Button F5btnNoMatchesFolderPath;
+        private System.Windows.Forms.Button F5btnFolderPath;
+        private System.Windows.Forms.Button F5btnListPath;
+        private System.Windows.Forms.TextBox F5tbNoMatchesFolderPath;
+        private System.Windows.Forms.TextBox F5tbFolderPath;
+        private System.Windows.Forms.TextBox F5tbListPath;
+        private System.Windows.Forms.Label F5lblNoMatchesResultMessage;
+        private System.Windows.Forms.Label F5lblNoMatchesFolderPath;
+        private System.Windows.Forms.Label F5lblFolderPath;
+        private System.Windows.Forms.Label F5lblListPath;
+        private System.Windows.Forms.OpenFileDialog F5ofdListPath;
+        private System.Windows.Forms.FolderBrowserDialog F5ofdSearchFolderPath;
+        private System.Windows.Forms.FolderBrowserDialog F5ofdNoMatchesFolderPath;
     }
 }
 

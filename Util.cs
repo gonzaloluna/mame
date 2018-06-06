@@ -102,22 +102,22 @@ namespace MameLibrary
         //// <summary>
         /// Mover Archivos que no coinciden en una lista
         /// </summary>
-        public static void Funcionalidad5()
+        public static void Funcionalidad5(string listFilePath, string folderToSearch, string NoMatchesDestinatinoFolderPath)
         {
-            string destination = @"C:\Users\gluna\Desktop\Mame\nocoinciden\";
 
-            var dummyList = File.ReadAllLines(@"C:\Users\gluna\Desktop\Mame\lista.txt").ToList();
-            string currentDirName = @"C:\Users\gluna\Desktop\Mame\dummy\";
-            DirectoryInfo di = new DirectoryInfo(currentDirName);
+            var dummyList = File.ReadAllLines(listFilePath).ToList();
+            DirectoryInfo di = new DirectoryInfo(folderToSearch);
             FileInfo[] smFiles = di.GetFiles();
             var listaArchivosSinExtension = new List<string>();
+            var archivosAMover = new List<string>();
             foreach (FileInfo fi in smFiles)
             {
                 if (!dummyList.Contains(Path.GetFileNameWithoutExtension(fi.Name)))
                 {
-                    fi.MoveTo(destination);
+                    archivosAMover.Add(fi.FullName);
                 }
             }
+            archivosAMover.ForEach(x=>File.Move(x,NoMatchesDestinatinoFolderPath + "\\" + (new FileInfo(x).Name)));
 
 
         }

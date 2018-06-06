@@ -25,6 +25,9 @@ namespace WindowsFormsApp1
         private string F4ListFilePath;
         private string F4SearchFolderPath;
         private string F4MatchesFolderPath;
+        private string F5NoMatchesFolderPath;
+        private string F5SearchFolderPath;
+        private string F5ListFilePath;
 
         public Form1()
         {
@@ -197,6 +200,47 @@ namespace WindowsFormsApp1
             F4lblFindMatchesResultMessage.Text = "Generando dummies, aguanta..";
             MameLibrary.Util.Funcionalidad4(F4ListFilePath, F4SearchFolderPath,F4MatchesFolderPath);
             F4lblFindMatchesResultMessage.Text = String.Format("Coincidencias movidas a {0}", F4MatchesFolderPath);
+
+        }
+
+
+        private void F5btnListPath_Click(object sender, EventArgs e)
+        {
+            F5lblNoMatchesResultMessage.Text = "";
+            DialogResult result = F5ofdListPath.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                F5ListFilePath = F5ofdListPath.FileName;
+                F5tbListPath.Text = F5ListFilePath;
+            }
+        }
+
+        private void F5btnFolderPath_Click(object sender, EventArgs e)
+        {
+            F5lblNoMatchesResultMessage.Text = "";
+            DialogResult result = F5ofdSearchFolderPath.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                F5SearchFolderPath = F5ofdSearchFolderPath.SelectedPath;
+                F5tbFolderPath.Text = F5SearchFolderPath;
+            }
+        }
+
+        private void F5btnNoMatchesFolderPath_Click(object sender, EventArgs e)
+        {
+            F5lblNoMatchesResultMessage.Text = "";
+            DialogResult result = F5ofdNoMatchesFolderPath.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                F5NoMatchesFolderPath = F5ofdNoMatchesFolderPath.SelectedPath;
+                F5tbNoMatchesFolderPath.Text = F5NoMatchesFolderPath;
+            }
+        }
+
+        private void F5btnNoMatches_Click(object sender, EventArgs e)
+        {
+            MameLibrary.Util.Funcionalidad5(F5ListFilePath, F5SearchFolderPath, F5NoMatchesFolderPath);
+            F5lblNoMatchesResultMessage.Text = String.Format("Archivos no encontrados movidas a {0}", F5NoMatchesFolderPath);
 
         }
     }
