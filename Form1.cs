@@ -18,6 +18,10 @@ namespace WindowsFormsApp1
 
         private string F2ListFilePath;
         private string F2DummyFolderPath;
+        private string F3ListFilePath;
+        private string F3DummyFolderPath;
+        private string F3SobraFilePath;
+        private string F3FaltaFilePath;
 
         public Form1()
         {
@@ -97,6 +101,58 @@ namespace WindowsFormsApp1
             F2lblGenerateDummiesResultMessage.Text = "Generando dummies, aguanta..";
             MameLibrary.Util.Funcionalidad2(F2ListFilePath, F2DummyFolderPath);
             F2lblGenerateDummiesResultMessage.Text = String.Format("Dummies generados en {0}", F2DummyFolderPath);
+
+        }
+
+        private void F3btnListFilePath_Click(object sender, EventArgs e)
+        {
+            F3lblGenerateFilesResultMessage.Text = "";
+            DialogResult result = F3ofdListPath.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                F3ListFilePath = F3ofdListPath.FileName;
+                F3tbListFilePath.Text = F3ListFilePath;
+            }
+        }
+
+        private void F3btnDummyFolderPath_Click(object sender, EventArgs e)
+        {
+            F3lblGenerateFilesResultMessage.Text = "";
+            DialogResult result = F3ofdDummyFolderPath.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                F3DummyFolderPath = F3ofdDummyFolderPath.SelectedPath;
+                F3tbDummyFolderPath.Text = F3DummyFolderPath;
+            }
+        }
+
+        private void F3btnSobraFilePath_Click(object sender, EventArgs e)
+        {
+            F3lblGenerateFilesResultMessage.Text = "";
+            DialogResult result = F3osdSobraPath.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                F3SobraFilePath = F3osdSobraPath.FileName;
+                F3tbSobraFilePath.Text = F3SobraFilePath;
+            }
+        }
+
+        private void F3btnFaltaFilePath_Click(object sender, EventArgs e)
+        {
+            F3lblGenerateFilesResultMessage.Text = "";
+            DialogResult result = F3osdFaltaPath.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                F3FaltaFilePath = F3osdFaltaPath.FileName;
+                F3tbFaltaFilePath.Text = F3FaltaFilePath;
+            }
+        }
+
+        private void F3btnGenerateSobraFalta_Click(object sender, EventArgs e)
+        {
+            F3lblGenerateFilesResultMessage.Text = "Generando dummies, aguanta..";
+            MameLibrary.Util.Funcionalidad3(F3ListFilePath, F3DummyFolderPath,F3SobraFilePath, F3FaltaFilePath);
+            F3lblGenerateFilesResultMessage.Text = String.Format("Comparacion terminada!");
 
         }
     }
