@@ -22,6 +22,9 @@ namespace WindowsFormsApp1
         private string F3DummyFolderPath;
         private string F3SobraFilePath;
         private string F3FaltaFilePath;
+        private string F4ListFilePath;
+        private string F4SearchFolderPath;
+        private string F4MatchesFolderPath;
 
         public Form1()
         {
@@ -153,6 +156,47 @@ namespace WindowsFormsApp1
             F3lblGenerateFilesResultMessage.Text = "Generando dummies, aguanta..";
             MameLibrary.Util.Funcionalidad3(F3ListFilePath, F3DummyFolderPath,F3SobraFilePath, F3FaltaFilePath);
             F3lblGenerateFilesResultMessage.Text = String.Format("Comparacion terminada!");
+
+        }
+
+        private void F4lbtnListPath_Click(object sender, EventArgs e)
+        {
+            F4lblFindMatchesResultMessage.Text = "";
+            DialogResult result = F4ofdListPath.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                F4ListFilePath = F4ofdListPath.FileName;
+                F4tbListPath.Text = F4ListFilePath;
+            }
+        }
+
+        private void F4btnFolderPath_Click(object sender, EventArgs e)
+        {
+            F4lblFindMatchesResultMessage.Text = "";
+            DialogResult result = F4ofdSearchFolderPath.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                F4SearchFolderPath = F4ofdSearchFolderPath.SelectedPath;
+                F4tbFolderPath.Text = F4SearchFolderPath;
+            }
+        }
+
+        private void F4btnMatchesFolderPath_Click(object sender, EventArgs e)
+        {
+            F4lblFindMatchesResultMessage.Text = "";
+            DialogResult result = F4ofdMatchesFolderPath.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                F4MatchesFolderPath = F4ofdMatchesFolderPath.SelectedPath;
+                F4tbMatchesFolderPath.Text = F4MatchesFolderPath;
+            }
+        }
+
+        private void F4btnGenerateMatches_Click(object sender, EventArgs e)
+        {
+            F4lblFindMatchesResultMessage.Text = "Generando dummies, aguanta..";
+            MameLibrary.Util.Funcionalidad4(F4ListFilePath, F4SearchFolderPath,F4MatchesFolderPath);
+            F4lblFindMatchesResultMessage.Text = String.Format("Coincidencias movidas a {0}", F4MatchesFolderPath);
 
         }
     }

@@ -87,17 +87,16 @@ namespace MameLibrary
         //// <summary>
         /// Mover Archivos que coinciden en una lista
         /// </summary>
-        public static void Funcionalidad4()
+        public static void Funcionalidad4(string listFilePath, string folderToSearch, string matchesDestinatinoFolderPath)
         {
-            string destination = @"C:\Users\gluna\Desktop\Mame\coinciden\";
-            var dummyList = File.ReadAllLines(@"C:\Users\gluna\Desktop\Mame\lista.txt").ToList();
-            DirectoryInfo dir = new DirectoryInfo(@"C:\Users\gluna\Desktop\Mame\dummy\");
+            var dummyList = File.ReadAllLines(listFilePath).ToList();
+            DirectoryInfo dir = new DirectoryInfo(folderToSearch);
             FileInfo[] smFiles = dir.GetFiles();
             List<FileInfo> fileMatches = new List<FileInfo>();
             dummyList.ForEach(item => fileMatches.AddRange(dir.GetFiles(item)));
             dummyList.ForEach(item => fileMatches.AddRange(dir.GetFiles(item + ".*")));
             dummyList.ForEach(item => fileMatches.AddRange(dir.GetFiles(item + ".")));
-            fileMatches.ForEach(item => item.MoveTo(destination + item.Name));
+            fileMatches.ForEach(item => item.MoveTo(matchesDestinatinoFolderPath + "\\" + item.Name));
         }
 
         //// <summary>
